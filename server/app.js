@@ -1,6 +1,7 @@
 const express = require('express'),
   app = express(),
   path = require('path'),
+  fs = require('fs'),
   multer = require('multer'),
   progressStream = require('progress-stream'),
   upload = multer({
@@ -40,6 +41,11 @@ app.post('/uploadimg', function (req, res, next) {
 });
 app.post('/uploadimg', function (req, res, next) {
   res.send({msg: '上传成功!'});
+});
+
+app.get('/getrouter', (req, res) => {
+  let data = fs.readFileSync(path.join(__dirname, 'routerdata.json'), 'utf8');
+  res.json(JSON.parse(data));
 });
 
 let server = app.listen(3000, () => console.log(`app is server ${server.address().port}`))

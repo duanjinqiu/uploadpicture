@@ -1,0 +1,14 @@
+[
+    {
+        "path": "/d1",
+        "name": "我是新增的路由",
+        "auth": "admin",
+        "component": "ddd/d1"
+    },
+    {
+        "path": "/do",
+        "auth": "edit",
+        "name": "苏伟苏伟苏伟",
+        "component": "ddd/ggg"
+    }
+]
